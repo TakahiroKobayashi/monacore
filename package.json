@@ -1,6 +1,6 @@
 {
-  "name": "bitcore",
-  "description": "Bitcoin Library",
+  "name": "monacore",
+  "description": "Monacoin Library",
   "version": "0.1.35",
   "author": {
     "name": "Stephen Pair",
@@ -43,7 +43,7 @@
   "main": "bitcore.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bitpay/bitcore.git"
+    "url": "https://github.com/monatr/monacore.git"
   },
   "scripts": {
     "install": "node-gyp rebuild",

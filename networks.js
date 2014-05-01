@@ -6,31 +6,38 @@ var hex = function(hex) {
 
 exports.livenet = {
   name: 'livenet',
-  magic: hex('f9beb4d9'),
-  addressVersion: 0x00,
-  privKeyVersion: 128,
-  P2SHVersion: 5,
-  hkeyPublicVersion: 0x0488b21e,
-  hkeyPrivateVersion: 0x0488ade4,
+  magic: hex('fbc0b6db'),  // Monacoin: increase each by adding 2 to bitcoin's value
+  addressVersion: 50,  // Monacoin: address start with M
+  privKeyVersion: 178,
+  P2SHVersion: 5,  // Monacoin: XXX
+  hkeyPublicVersion: 0x0488b21e,  // Monacoin: XXX
+  hkeyPrivateVersion: 0x0488ade4,  // Monacoin: XXX
   genesisBlock: {
-    hash: hex('6FE28C0AB6F1B372C1A6A246AE63F74F931E8365E15A089C68D6190000000000'),
-    merkle_root: hex('3BA3EDFD7A7B12B27AC72C3E67768F617FC81BC3888A51323A9FB8AA4B1E5E4A'),
+    hash: hex('B68B8C410D2EA4AFD74FB56E370BFC1BEDF929E1453896C9E79DD116011C9FFF'),  // Monacoin: genesis hash
+    merkle_root: hex('A64BAC07FE31877F31D03252953B3C32398933AF7A724119BC4D6FA4A805E435'),  // Monacoin: merkle root
     height: 0,
-    nonce: 2083236893,
+    nonce: 1234534,  // Monacoin: nonce
     version: 1,
     prev_hash: buffertools.fill(new Buffer(32), 0),
-    timestamp: 1231006505,
-    bits: 486604799,
+    timestamp: 1388479472,  // Monacoin: start at 2014/01/01
+    bits: 504365040,  // Monacoin: difficulty bits
   },
   dnsSeeds: [
-    'seed.bitcoin.sipa.be',
-    'dnsseed.bluematt.me',
-    'dnsseed.bitcoin.dashjr.org',
-    'seed.bitcoinstats.com',
-    'seed.bitnodes.io',
-    'bitseed.xf2.org'
+    'dnsseed.monacoin.org',
+    'alice.monapool.net',
+    'anipool.net',
+    'www.cryptopoolmining.com',
+    'fusa.gikopool.net',
+    'gikopool.net',
+    'mona.2chpool.com',
+    'mona.xxpoolxx.net',
+    'mona1.monapool.com',
+    'mona2.monapool.com',
+    'simplemona.com',
+    'vippool.net',
+    'hattenba.net'
   ],
-  defaultClientPort: 8333
+  defaultClientPort: 9401  // Monacoin: default port
 };
 
 exports.mainnet = exports.livenet;
