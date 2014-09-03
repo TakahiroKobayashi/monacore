@@ -1,7 +1,7 @@
 'use strict';
 
 var chai = chai || require('chai');
-var bitcore = bitcore || require('../bitcore');
+var bitcore = bitcore || require('../monacore');
 
 var should = chai.should();
 
@@ -37,11 +37,11 @@ var chaincode = '84ac14bc4b388b33da099a0b4ee3b507284d99e1476639e36e5ca5e6af86481
  * This is some addresses generated from the wallet:
  */
 var address = [
-  '1PUzLkds8eHGjHPaW7v7h23bzmHjrRMVqz',
-  '1CGrip2uQUwhP2f3ARfbcrmtdwvWzELRmj',
-  '1BfBauMP4PX1ZBYrqH4K4R8KWrFfskrs7E',
-  '15emDCBVgBJLDP5cKxuwZ4Q77sfqEcwZvC',
-  '16tDJhMYBv1szZgRZCohWrzEvzX2bG7vEQ'
+  'MWP9aBYGdfT5cxMuj6a3wHewTzAuTvuRdr',
+  'MKB1xEwJuW7WGhdNPQKXs8PE7AogSbpew8',
+  'MJZLpLFnZQgpSrXC4FiFJgjez58qRfmYx6',
+  'MCYvSd5uBCU9743wYwZsoL1Sb6YzjNj1tF',
+  'MDnNY8FwgwBgtEeknBTdm8baQDQC8yKyFh'
 ];
 
 var instance, fromseed, first;

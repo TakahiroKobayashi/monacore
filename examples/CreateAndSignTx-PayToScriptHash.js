@@ -1,5 +1,5 @@
 var run = function() {
-  bitcore = typeof(bitcore) === 'undefined' ? require('../bitcore') : bitcore;
+  bitcore = typeof(bitcore) === 'undefined' ? require('../monacore') : bitcore;
   var networks = require('../networks');
   var WalletKey = bitcore.WalletKey;
   var Script = bitcore.Script;

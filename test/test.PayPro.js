@@ -3,7 +3,7 @@
 var chai = chai || require('chai');
 var should = chai.should();
 var expect = chai.expect;
-var bitcore = bitcore || require('../bitcore');
+var bitcore = bitcore || require('../monacore');
 
 var is_browser = typeof process == 'undefined'
   || typeof process.versions === 'undefined';

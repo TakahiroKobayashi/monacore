@@ -1,7 +1,7 @@
 'use strict';
 
 var chai = chai || require('chai');
-var bitcore = bitcore || require('../bitcore');
+var bitcore = bitcore || require('../monacore');
 
 var should = chai.should();
 
@@ -38,19 +38,19 @@ describe('Electrum', function() {
     var elec = new Electrum(mpk);
     var pubkey = elec.generatePubKey(0);
     var addr = Address.fromPubKey(pubkey);
-    addr.as('base58').should.equal('15Ur7LV4hZFvFYQHkB12g1mdnKuHyHBDiW');
+    addr.as('base58').should.equal('MCP1LmPUCaRj9DNcy9exvHNyFYnTY2G76U');
   });
   it('should generate correct (change) public keys at sequence 0,1,2', function() {
     var expected_values = {
       receiving: [
-        '15Ur7LV4hZFvFYQHkB12g1mdnKuHyHBDiW',
-        '19K48MhyXK4qChGCUJzAHxLFjbQRg9tb9F',
-        '1EfoxVmRVzYf1a1WELv2qMvEEpu2u5pXsy'
+        'MCP1LmPUCaRj9DNcy9exvHNyFYnTY2G76U',
+        'MGDDMncP2LEe6NEXhHe6YDwbCpHbErMwPR',
+        'MMZyBvfq11iTuEyqTKZy5dXZi3nCSRmEic'
       ],
       change: [
-        '138EGyTTyXFuqWBr8Jd7qmPbnfJUFmmuQg',
-        '12H7HZhtn7aNpTySXysKXiyxULybMktukh',
-        '1KMEUhmmiSdjX9fsv8aCAiYnVZnTTjqx7W'
+        'MA2PWQMsUYRijBABMHH462zwFtBdrA6yed',
+        'M9BGWzcJH8kBi8wmkxXFmzbHwZrkvTA6Sy',
+        'MSFPi8gBDToYQpeD97E8QzA7xnfd5ym34z'
       ]
     };
     var elec = new Electrum(mpk);

@@ -1,7 +1,7 @@
 'use strict';
 
 var chai = chai || require('chai');
-var bitcore = bitcore || require('../bitcore');
+var bitcore = bitcore || require('../monacore');
 
 var should = chai.should();
 var expect = chai.expect;
@@ -23,12 +23,12 @@ describe('Address', function() {
     a.toString().should.equal('1GfGL3iLTfX43KSCd95WhMi4bgU36qjzC1');
   });
   var data = [
-    ['1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa', true],
+    ['MGv9cSYnaRSTZNzYaN7bhbgmozoGkKBvCn', true],
     ['11111111111111111111111111122222234', false], // totally invalid
     ['32QBdjycLwbDTuGafUwaU5p5GxzSLPYoF6', true],
-    ['1Q1pE5vPGEEMqRcVRMbtBK842Y6Pzo6nK9', true],
+    ['MWuyTWpnmFQAj6apeLFpRajPVkyZXCTXYQ', true],
     ['1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNb', false], //bad checksum ... thanks @wtogami
-    ['1AGNa15ZQXAZUgFiqJ2i7Z2DPU2J6hW62i', true],
+    ['MHAXoRyxuYLNNME44GgeMpdYrguTbbR9xu', true],
     ['1AGNa15ZQXAZUgFiqJ2i7Z2DPU2J6hW600', false], // bad checksum
     ['1AGNa15ZQXAZUgFiqJ2i7Z2DPU2J6hW620', false], // bad checksum
     ['1ANNa15ZQXAZUgFiqJ2i7Z2DPU2J6hW62i', false], // data changed, original checksum.
@@ -56,9 +56,9 @@ describe('Address', function() {
   });
   it('should be able to detect network from an address', function() {
     // livenet
-    var a = new Address('1KfyjCgBSMsLqiCbakfSdeoBUqMqLUiu3T');
+    var a = new Address('MSa8xdaawP39jPAvojKNsvQWx4EzvYUMeE');
     a.network().name.should.equal('livenet');
-    a = new Address('1dice8EMZmqKvrGE4Qc9bUFf9PX3xaYDp');
+    a = new Address('M8Xsr52draweDbpbT34YPs5b8NGgfjGW6n');
     a.network().name.should.equal('livenet');
     //p2sh
     a = new Address('3QRhucKtEn5P9i7YPxzXCqBtPJTPbRFycn');
@@ -94,7 +94,7 @@ describe('Address', function() {
       key.private = privkey;
       key.regenerateSync();
       var hash = bitcore.util.sha256ripe160(key.public);
-      var addr = new bitcore.Address(0, hash);
+      var addr = new bitcore.Address(50, hash);
       addr.isValid().should.equal(true);
     });
 
@@ -113,13 +113,13 @@ describe('Address', function() {
   describe('constructor, 2 params', function() {
     it('should make an address from a version, hash', function() {
       var hash = new Buffer('1ab59a0fd1d5fc446d38746ee033c8af57ed6bc0', 'hex');
-      var addr = new Address(0, hash);
-      addr.toString().should.equal('13SE7uKmnQwGA8X1A8WcZnX2ceQRDEzsAd');
+      var addr = new Address(50, hash);
+      addr.toString().should.equal('MALPMLEBHS753oVLP7AYp48N5sHao5G6We');
     });
     it('should fail with param version, string', function() {
       var hash = '1ab59a0fd1d5fc446d38746ee033c8af57ed6bc0';
       (function() {
-        var addr = new Address(0, hash);
+        var addr = new Address(50, hash);
       }).should.throw();
     });
   });
@@ -129,7 +129,7 @@ describe('Address', function() {
     it('should make pubkeyhash address from an uncompressed public key', function() {
       var pubkey = new Buffer('04fa05ce8b25010cb6e17a30e0b66668bf083c40687547748ec330ee77adf53a42abd3d26148cbacfcf79c907ddefeb2c37f8bebc0a695ba79d634449d871de218', 'hex');
       var hash = bitcore.util.sha256ripe160(pubkey);
-      var addr = new Address(0, hash);
+      var addr = new Address(50, hash);
       addr.toString().should.equal(Address.fromPubKey(pubkey).toString());
     });
   });
@@ -140,7 +140,7 @@ describe('Address', function() {
       k.compressed = true;
       k.regenerateSync();
       var a = Address.fromKey(k);
-      a.toString().should.equal('1L8k7WpWHMNkqVPTaZhzFU5VaWyjZEK7mD');
+      a.toString().should.equal('MT2uLwiunNYZjAMnoYMvVjgq3jru9K1UmH');
     });
   });
 

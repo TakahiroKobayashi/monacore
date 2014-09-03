@@ -3,7 +3,7 @@
 var chai = chai || require('chai');
 var should = chai.should();
 var sinon = require('sinon');
-var bitcore = bitcore || require('../bitcore');
+var bitcore = bitcore || require('../monacore');
 var AuthMessage = bitcore.AuthMessage;
 var Key = bitcore.Key;
 var util = bitcore.util;

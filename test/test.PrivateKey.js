@@ -1,7 +1,7 @@
 'use strict';
 
 var chai = chai || require('chai');
-var bitcore = bitcore || require('../bitcore');
+var bitcore = bitcore || require('../monacore');
 
 var should = chai.should();
 
@@ -37,21 +37,21 @@ describe('PrivateKey', function() {
     a.network().name.should.equal('testnet');
 
     //compress flag = on
-    var a = new PrivateKey('KwHXRTLNWKzxy2NUnnhFtxricC3Dod4Dd3D7RKzVkKDtWrZhuDHs');
+    var a = new PrivateKey('TLH41XMMG1oqgu2tSaRuhfb53v5qYYcZm8MdQ3KEJEuUbQYtKpoX');
     a.network().name.should.equal('livenet');
-    var a = new PrivateKey('KwaLX8oyJNNCL9tcyYakQHJDTnrPAmZ2M1YK7NhEcT9j55LWqMZz');
+    var a = new PrivateKey('TLZs7Cpx44B542Z2dLKQCz2ZuWtzuh7NV6gq661yANqK9dJmTF3x');
     a.network().name.should.equal('livenet');
 
     //compress flag = off
-    var a = new PrivateKey('5KS4jw2kT3VoEFUfzgSpX3GVi7qRYkTfwTBU7qxPKyvbGuiVj33');
+    var a = new PrivateKey('6zdHZXUM4KK7yGXwKfUnD5FDVpdL3xbTHQirKLMD2kFyx2H39HS');
     a.network().name.should.equal('livenet');
-    var a = new PrivateKey('5JZsbYcnYN8Dz2YeSLZr6aswrVevedMUSFWxpie6SPpYRb2E4Gi');
+    var a = new PrivateKey('6ym6R94P9dwYj3bumKboncrfeCSq9qVFnD4M2D2v9A9w6etgmii');
     a.network().name.should.equal('livenet');
   });
 
   describe('#isValid', function() {
     it('should detect this private key as valid', function() {
-      var privKey = new PrivateKey('5JQkUX6RNQC91xv4Www6Cgbxb6Eri6WBJjtPGqwfXVKBzT37cAf');
+      var privKey = new PrivateKey('6ybyJ7Y1yg1TkyyKqvy3tiagNo2mDJdxehRmULLVEFeafaJTHNh');
       privKey.isValid().should.equal(true);
     });
   });

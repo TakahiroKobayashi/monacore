@@ -2,7 +2,7 @@
 
 var run = function() {
   // Replace '../bitcore' with 'bitcore' if you use this code elsewhere.
-  var bitcore = require('../bitcore');
+  var bitcore = require('../monacore');
   var Peer = bitcore.Peer;
   var PeerManager = bitcore.PeerManager;
 

@@ -1,4 +1,4 @@
-var bitcore = require('../bitcore');
+var bitcore = require('../monacore');
 var Address = bitcore.Address;
 var bitcoreUtil = bitcore.util;
 var Script = bitcore.Script;
