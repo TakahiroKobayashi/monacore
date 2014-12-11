@@ -1,8 +1,8 @@
 Monacore
 ========
 
-[![Build Status](https://travis-ci.org/monatr/monacore.svg?branch=master)](https://travis-ci.org/monatr/monacore)
-[![Coverage Status](https://img.shields.io/coveralls/monatr/monacore.svg)](https://coveralls.io/r/monatr/monacore)
+[![Build Status](https://travis-ci.org/visvirial/monacore.svg?branch=master)](https://travis-ci.org/visvirial/monacore)
+[![Coverage Status](https://img.shields.io/coveralls/visvirial/monacore.svg)](https://coveralls.io/r/visvirial/monacore)
 
 A pure, powerful core for your monacoin project.
 
