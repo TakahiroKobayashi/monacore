@@ -35,7 +35,8 @@ exports.livenet = {
     'mona2.monapool.com',
     'simplemona.com',
     'vippool.net',
-    'hattenba.net'
+    'hattenba.net',
+    'coind.asicpool.info'
   ],
   defaultClientPort: 9401  // Monacoin: default port
 };
